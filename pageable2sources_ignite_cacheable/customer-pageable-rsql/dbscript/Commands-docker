@@ -1,0 +1,5 @@
+docker-compose up -d
+docker-compose run db psql -h client_pageable-rsql -U postgres
+
+docker-compose run db psql -h client_pageable-rsql -U customer
+

@@ -1,0 +1,5 @@
+docker-compose up -d
+docker-compose run db psql -h client_nopageable -U postgres
+
+docker-compose run db psql -h client_nopageable -U customer
+

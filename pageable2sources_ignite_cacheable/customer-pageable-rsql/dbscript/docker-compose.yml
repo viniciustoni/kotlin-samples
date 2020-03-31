@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  db:
+    image: "postgres"
+    container_name: "client_pageable-rsql"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+#   Maps port 54320 (localhost) to port 5432 on the container. 
+    ports:
+      - "54320:5432"
