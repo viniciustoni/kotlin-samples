@@ -1,5 +1,9 @@
 .gradle
+/gradle/
+gradle/
 /build/
+
+/redis-data/
 
 # Ignore Gradle GUI config
 gradle-app.setting

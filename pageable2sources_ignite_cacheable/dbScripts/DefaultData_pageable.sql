@@ -9,17 +9,17 @@ insert into country (id, name, country_code)
   values(nextval('country_seq'), 'USA', '+1');
 
 -- Insert into client table
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Vinicius Antonio Gai_Pageable', to_date('19881112','YYYYMMDD'), true, 1);
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Frédéric Chopin_Pageable', to_date('18100301','YYYYMMDD'), true, 2);
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Jerzy Kosiński_Pageable', null, true, 2);
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Marie Bashkirtseff_Pageable', null, false, 3);
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Angelo_Pageable', null, true, null);
-insert into client (id, name, birthday, active, country_id)
+insert into client (id, name, birth, active, country_id)
   values (nextval('client_seq'), 'Will Smith_Pageable', to_date('19680925','YYYYMMDD'), false, 4);
 
 -- Insert into Address

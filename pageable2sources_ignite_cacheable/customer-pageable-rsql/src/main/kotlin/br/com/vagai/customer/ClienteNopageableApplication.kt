@@ -1,4 +1,4 @@
-package br.com.vagai.clientenopageable
+package br.com.vagai.customer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

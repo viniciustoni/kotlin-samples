@@ -42,6 +42,17 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+
+	implementation("org.apache.commons:commons-collections4:4.4")
+
+	implementation("org.springdoc:springdoc-openapi-ui:1.2.28")
+	implementation("org.springdoc:springdoc-openapi-webmvc-core:1.2.28") {
+		exclude(group = "io.github.classgraph", module = "classgraph")
+	}
+
+	implementation("org.modelmapper:modelmapper:2.3.6")
+	implementation("org.mapstruct:mapstruct:1.3.1.Final")
+	runtimeOnly("org.mapstruct:mapstruct-processor:1.3.1.Final")
 }
 
 tasks.withType<Test> {
