@@ -1,8 +1,9 @@
-docker-compose up --d --scale redis-master=1 --scale redis-secondary=3
-docker-compose run redis-master redis-cli
+docker-compose up --scale redis-replica=3 -d
 
-docker-compose run db psql -h client2sources -U postgres
+docker-compose run redis-master redis-cli -a redis
 
-docker-compose run db psql -h client2sources -U customer_pageable
-docker-compose run db psql -h client2sources -U customer_nonpageable
+docker-compose run postgresdb psql -h postgresdb -U postgres
+
+docker-compose run postgresdb psql -h postgresdb -U customer_pageable
+docker-compose run postgresdb psql -h postgresdb -U customer_nonpageable
 

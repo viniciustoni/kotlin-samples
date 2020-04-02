@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ClienteNopageableApplication
+class CustomerNopageableApplication
 
 fun main(args: Array<String>) {
-	runApplication<ClienteNopageableApplication>(*args)
+    runApplication<CustomerNopageableApplication>(*args)
 }

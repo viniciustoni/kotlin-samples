@@ -18,8 +18,10 @@ class OpenAPIConfig {
     @Bean
     fun customerDashboardApi(): GroupedOpenApi {
         val paths = arrayOf("/api/*/rest/**")
+        val packagedToMatch = arrayOf("br.com.vagai.customer.api")
         return GroupedOpenApi.builder()
                 .setGroup("customer")
+                .packagesToScan(*packagedToMatch)
                 .pathsToMatch(*paths)
                 .build()
     }

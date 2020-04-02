@@ -2,7 +2,8 @@ CREATE SEQUENCE country_seq START WITH 1;
 create table country (
     id numeric(5) primary key,
     name varchar(100) not null,
-    country_code varchar(5) not null UNIQUE
+    country_code varchar(5) not null UNIQUE,
+    PHONE_CODE varchar(5) not null UNIQUE
 );
 
 CREATE SEQUENCE client_seq START WITH 1;

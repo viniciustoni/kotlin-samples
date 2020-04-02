@@ -1,12 +1,12 @@
 -- Insert into country table
-insert into country (id, name, country_code) 
-  values(nextval('country_seq'), 'Brazil', '+55');
-insert into country (id, name, country_code) 
-  values(nextval('country_seq'), 'Poland', '+48');
-insert into country (id, name, country_code) 
-  values(nextval('country_seq'), 'Ukraine', '+380');
-insert into country (id, name, country_code) 
-  values(nextval('country_seq'), 'USA', '+1');
+insert into country (id, name, phone_code, country_code) 
+  values(nextval('country_seq'), 'Brazil', '+55', 'BR');
+insert into country (id, name, phone_code, country_code) 
+  values(nextval('country_seq'), 'Poland', '+48', 'PL');
+insert into country (id, name, phone_code, country_code) 
+  values(nextval('country_seq'), 'Ukraine', '+380', 'UA');
+insert into country (id, name, phone_code, country_code) 
+  values(nextval('country_seq'), 'USA', '+1', 'US');
 
 -- Insert into client table
 insert into client (id, name, birth, active, country_id)
