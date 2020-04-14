@@ -13,27 +13,15 @@ class OpenAPIConfig {
     fun customOpenAPI(): OpenAPI {
         return OpenAPI()
                 .info(Info().title("Customer without pageable feature.").version("0.0.1-SNAPSHOT"))
+                .apply { }
     }
 
     @Bean
     fun customerDashboardApi(): GroupedOpenApi {
-        val paths = arrayOf("/api/*/rest/**")
-        val packagedToMatch = arrayOf("br.com.vagai.customer.api")
+        val paths = arrayOf("/*/rest/**")
         return GroupedOpenApi.builder()
                 .setGroup("customer")
-                .packagesToScan(*packagedToMatch)
                 .pathsToMatch(*paths)
-                .build()
-    }
-
-    @Bean
-    fun modelApi(): GroupedOpenApi {
-        val paths = arrayOf("/api/*/stream/**")
-        val packagedToMatch = arrayOf("br.com.vagai.customer.dto")
-        return GroupedOpenApi.builder()
-                .setGroup("model")
-                .pathsToMatch(*paths)
-                .packagesToScan(*packagedToMatch)
                 .build()
     }
 }

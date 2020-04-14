@@ -3,8 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.2.6.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
-    id("com.github.johnrengelman.processes") version "0.5.0"
-    id("org.springdoc.openapi-gradle-plugin") version "1.0.0"
     kotlin("jvm") version "1.3.71"
     kotlin("plugin.spring") version "1.3.71"
     kotlin("plugin.jpa") version "1.3.71"
@@ -13,6 +11,15 @@ plugins {
 group = "br.com.vagai"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
+object SpringDoc {
+    const val version = "1.3.2"
+
+    const val core = "org.springdoc:springdoc-openapi-webmvc-core:$version"
+    const val ui = "org.springdoc:springdoc-openapi-ui:$version"
+    const val kotlin = "org.springdoc:springdoc-openapi-kotlin:$version"
+    const val dataRest = "org.springdoc:springdoc-openapi-data-rest:$version"
+}
 
 val developmentOnly by configurations.creating
 configurations {
@@ -47,10 +54,12 @@ dependencies {
 
     implementation("org.apache.commons:commons-collections4:4.4")
 
-    implementation("org.springdoc:springdoc-openapi-ui:1.2.28")
-    implementation("org.springdoc:springdoc-openapi-webmvc-core:1.2.28") {
+    implementation(SpringDoc.core) {
         exclude(group = "io.github.classgraph", module = "classgraph")
     }
+    implementation(SpringDoc.ui)
+    implementation(SpringDoc.kotlin)
+    implementation(SpringDoc.dataRest)
 }
 
 tasks.withType<Test> {
