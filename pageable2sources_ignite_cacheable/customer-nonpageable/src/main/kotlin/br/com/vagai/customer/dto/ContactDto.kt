@@ -6,7 +6,7 @@ class ContactDto(
         var id: Long,
         var type: ContactType,
         var contactValue: String?,
-        var phoneNumber: String?,
-        var extension: String?,
+        var phoneNumber: Long?,
+        var extension: Int?,
         var countryDto: CountryDto?,
         var clientDto: ClientDto)

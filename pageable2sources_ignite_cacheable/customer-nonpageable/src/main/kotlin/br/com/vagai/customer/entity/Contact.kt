@@ -19,13 +19,13 @@ class Contact(
         @Column(name = "TYPE", nullable = false)
         var type: ContactType,
         var contactValue: String?,
-        var phoneNumber: String?,
-        var extension: String?,
+        var phoneNumber: Long?,
+        var extension: Int?,
 
         @ManyToOne(fetch = LAZY)
-        @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID", updatable = false, insertable = false)
+        @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID", updatable = true, insertable = true)
         var country: Country?,
 
         @ManyToOne(fetch = LAZY)
-        @JoinColumn(name = "CLIENT_ID", referencedColumnName = "ID", updatable = false, insertable = false, nullable = false)
+        @JoinColumn(name = "CLIENT_ID", referencedColumnName = "ID", updatable = true, insertable = true, nullable = false)
         var client: Client)

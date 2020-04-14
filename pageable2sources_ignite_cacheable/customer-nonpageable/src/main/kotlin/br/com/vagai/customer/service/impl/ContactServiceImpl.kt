@@ -16,4 +16,9 @@ class ContactServiceImpl(val contactRepository: ContactRepository,
             .stream()
             .map { contactMapper.contactToContactDto(it) }
             .collect(toList()) ?: throw EntityNotFoundException("Contact not found")
+
+    override fun saveContact(contactDto: ContactDto): ContactDto {
+        val contact = contactRepository.save(contactMapper.contactDtoToContact(contactDto))
+        return contactMapper.contactToContactDto(contact)
+    }
 }
