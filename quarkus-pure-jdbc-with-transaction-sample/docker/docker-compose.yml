@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgresdb:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "54320:5432"
+    networks:
+      - database
+  #  pgadmin:
+  #    image: "dpage/pgadmin4:latest"
+  #    environment:
+  #      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+  #      - PGADMIN_DEFAULT_PASSWORD=SuperSecret
+  #    ports:
+  #      - "8282:80"
+  #    networks:
+  #      - database
+
+networks:
+  database:
+    driver: bridge
